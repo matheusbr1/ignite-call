@@ -2,7 +2,7 @@ import { Button, Text, TextInput } from '@ignite-ui/react'
 import { Form, FormAnnotation } from './styles'
 import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
-import * as z from 'zod'
+import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const claimUserNameFormSchema = z.object({
