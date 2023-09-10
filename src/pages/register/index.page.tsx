@@ -50,7 +50,9 @@ export default function Register() {
 
       console.log(data)
     } catch (error) {
-      console.log(error)
+      if (error?.response?.data?.message) {
+        alert(error.response.data.message)
+      }
     }
   }
 
