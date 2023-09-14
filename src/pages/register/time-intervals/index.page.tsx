@@ -28,7 +28,7 @@ const timeIntervalsFormSchema = z.object({
   intervals: z
     .array(
       z.object({
-        weekday: z.number().min(0).max(7),
+        weekDay: z.number().min(0).max(7),
         enabled: z.boolean(),
         startTime: z.string(),
         endTime: z.string(),
@@ -42,7 +42,7 @@ const timeIntervalsFormSchema = z.object({
     .transform((intervals) =>
       intervals.map((interval) => {
         return {
-          weekday: interval.weekday,
+          weekDay: interval.weekDay,
           startTimeInMinutes: convertTimeStringToMinutes(interval.startTime),
           endTimeInMinutes: convertTimeStringToMinutes(interval.endTime),
         }
@@ -76,13 +76,13 @@ export default function TimeIntervals() {
     resolver: zodResolver(timeIntervalsFormSchema),
     defaultValues: {
       intervals: [
-        { weekday: 0, enabled: false, startTime: '08:00', endTime: '18:00' },
-        { weekday: 1, enabled: true, startTime: '08:00', endTime: '18:00' },
-        { weekday: 2, enabled: true, startTime: '08:00', endTime: '18:00' },
-        { weekday: 3, enabled: true, startTime: '08:00', endTime: '18:00' },
-        { weekday: 4, enabled: true, startTime: '08:00', endTime: '18:00' },
-        { weekday: 5, enabled: true, startTime: '08:00', endTime: '18:00' },
-        { weekday: 6, enabled: false, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 0, enabled: false, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 1, enabled: true, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 2, enabled: true, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 3, enabled: true, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 4, enabled: true, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 5, enabled: true, startTime: '08:00', endTime: '18:00' },
+        { weekDay: 6, enabled: false, startTime: '08:00', endTime: '18:00' },
       ],
     },
   })
@@ -136,7 +136,7 @@ export default function TimeIntervals() {
                     )
                   }}
                 />
-                <Text>{weekDays[field.weekday]}</Text>
+                <Text>{weekDays[field.weekDay]}</Text>
               </IntervalDay>
               <IntervalInputs>
                 <TextInput
