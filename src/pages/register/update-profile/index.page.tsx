@@ -38,11 +38,11 @@ export default function UpdateProfile() {
   const router = useRouter()
 
   async function handleUpdateProfile(data: UpdateProfileData) {
-    await api.put('users/profile', {
-      bio: data.bio,
-    })
+    // await api.put('users/profile', {
+    //   bio: data.bio,
+    // })
 
-    router.push(`schedule/${session.data.user.username}`)
+    router.push(`/schedule/${session.data.user.username}`)
   }
 
   return (
