@@ -10,7 +10,7 @@ export const CalendarContainer = styled('div', {
 export const CalendarHeader = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-beetween',
+  justifyContent: 'space-between',
 })
 
 export const CalendarTitle = styled(Text, {
